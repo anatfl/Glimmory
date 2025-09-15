@@ -1,0 +1,44 @@
+[
+    { 
+        "title": "Went to the beach", 
+        "date": "2025-09-08",
+        "description": "A memorable trip to the beach. I had a great time exploring the ocean.",
+        "seed": true
+    },
+    {
+        "title": "Baked the best chocolate cake",
+        "date": "2025-09-08",
+        "description": "The recipe for this cake was simple yet delicious.",
+        "seed": true
+    },
+    { 
+        "title": "Watched a movie with my friends",
+        "date": "2025-09-08",
+        "description": "We bought popcorn also!",
+        "seed": true
+    },
+    { 
+        "title": "Played a game with my friends", 
+        "date": "2025-09-08",
+        "description": "We played FIFA",
+        "seed": true 
+    },
+    { 
+        "title": "Watched a TV show with my friends", 
+        "date": "2025-09-08",
+        "description": "We watched The Office",
+        "seed": true
+    },
+    {  
+        "title": "Watched a documentary with my friends", 
+        "date": "2025-09-08",
+        "description": "It was about the history of the internet",
+        "seed": true 
+    },
+    {  
+        "title": "Watched a series with my friends", 
+        "date": "2025-09-08",
+        "description": null,
+        "seed": true 
+    }
+]
