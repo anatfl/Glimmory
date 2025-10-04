@@ -8,11 +8,11 @@ const memorySchema = new Schema({
     },
     date: {
         type: Date,
-        required: true
+        default: Date.now
     },
     description: {
         type: String,
-        default: null
+        default: ''
     }
 }, {
     timestamps: true
