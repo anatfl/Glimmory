@@ -20,13 +20,12 @@ const ItemsGrid = () => {
     );
   }
 
-
   return (
     <div className={styles.gridContainer}>
         {memories.map((item) => (
             <MemoryCard 
-              key={item._id} 
-              id={item._id} 
+              key={item.id} 
+              id={item.id} 
               title={item.title} 
               date={item.date ? new Date(item.date).toLocaleDateString('he-IL') : ''} 
             />

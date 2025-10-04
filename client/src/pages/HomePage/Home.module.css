@@ -5,12 +5,12 @@
 
 .headline {
   font-size: 2em;
-  margin-bottom: 20px;
+  margin-bottom: 0.01em;
   color: black;
 }
 
 .secondheadline {
   font-size: 0.75em;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   color: black;
 }
