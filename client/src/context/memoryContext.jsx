@@ -6,10 +6,11 @@ const MemoryContext = createContext();
 const MemoriesProvider = ({ children }) => {
     const [memories, setMemories] = useState(null);
 
+
     const getMemories = async () => {
         try {
             const response = await api.get('/memories');
-            setMemories(response.data);
+            setMemories(response.data.memories);
         } catch (error) {
             console.error('Error fetching Memories:', error);
         }
