@@ -1,11 +1,9 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Home from './pages/HomePage/HomePage';
 import styles from './styles/App.module.css';
-import { MemoriesProvider } from './context/memoryContext';
 
 function App() {
   return (
-    <MemoriesProvider>
       <BrowserRouter>
         <div className={styles.app}>
           <header className={styles.appHeader}>
@@ -24,7 +22,6 @@ function App() {
           </footer>
         </div>
       </BrowserRouter>
-    </MemoriesProvider>
   );
 }
 

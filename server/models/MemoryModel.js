@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const memorySchema = new Schema({
     title: {
         type: String,
-        required: true
+        required: true,
+        trim: true
     },
     date: {
         type: Date,

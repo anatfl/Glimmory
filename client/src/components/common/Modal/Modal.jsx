@@ -8,15 +8,22 @@ export default function Modal({
   title,
   children,
   footer = null,
-  size = 'md',            // 'sm' | 'md' | 'lg' | 'xl'
+  size = 'md',
   showClose = true,
   closeOnBackdrop = true,
   initialFocusRef = null,
   ariaDescribedBy,
+  className = '',
 }) {
-  const onOpenChange = useCallback((open) => { if (!open) onClose?.(); }, [onClose]);
+  const onOpenChange = useCallback((open) => {
+    if (!open) onClose?.();
+  }, [onClose]);
+
   const sizeClass = {
-    sm: styles.sizeSM, md: styles.sizeMD, lg: styles.sizeLG, xl: styles.sizeXL,
+    sm: styles.sizeSM,
+    md: styles.sizeMD,
+    lg: styles.sizeLG,
+    xl: styles.sizeXL,
   }[size] || styles.sizeMD;
 
   return (
@@ -24,17 +31,26 @@ export default function Modal({
       <Dialog.Portal container={document.getElementById('modal-root') || undefined}>
         <Dialog.Overlay className={styles.backdrop} />
         <Dialog.Content
-          className={`${styles.modal} ${sizeClass}`}
+          className={`${styles.modal} ${sizeClass} ${className}`}
           aria-describedby={ariaDescribedBy}
           onOpenAutoFocus={(e) => {
-            if (initialFocusRef?.current) { e.preventDefault(); initialFocusRef.current.focus(); }
+            if (initialFocusRef?.current) {
+              e.preventDefault();
+              initialFocusRef.current.focus();
+            }
           }}
-          onInteractOutside={(e) => { if (!closeOnBackdrop) e.preventDefault(); }}
+          onInteractOutside={(e) => {
+            if (!closeOnBackdrop) e.preventDefault();
+          }}
         >
           {(title || showClose) && (
             <div className={styles.header}>
               {title && <Dialog.Title className={styles.title}>{title}</Dialog.Title>}
-              {showClose && <Dialog.Close className={styles.closeBtn} aria-label="Close">×</Dialog.Close>}
+              {showClose && (
+                <Dialog.Close className={styles.closeBtn} aria-label="Close">
+                  ×
+                </Dialog.Close>
+              )}
             </div>
           )}
 
