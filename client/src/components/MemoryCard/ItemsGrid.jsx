@@ -38,6 +38,10 @@ const ItemsGrid = () => {
         isOpen={!!selectedMemory}
         onClose={() => setSelectedMemory(null)}
         memory={selectedMemory}
+        onDeleted={() => {
+          setSelectedMemory(null);
+          getMemories();
+        }}
       />
     </>
   );

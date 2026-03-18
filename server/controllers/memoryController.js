@@ -41,7 +41,26 @@ const addNewMemory = async (req, res) => {
     }
 }
 
+// delete a memory
+const deleteMemory = async (req, res) => {
+  try {
+    const { id } = req.params;
+    console.log('DELETE memory route hit', req.params.id);
+
+    const deleted = await Memory.findByIdAndDelete(id);
+
+    if (!deleted) {
+      return res.status(404).json({ message: 'Memory not found' });
+    }
+
+    res.status(200).json({ message: 'Memory deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
 module.exports = {
     getAllMemories,
-    addNewMemory
+    addNewMemory,
+    deleteMemory,
 }

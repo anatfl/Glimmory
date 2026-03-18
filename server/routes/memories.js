@@ -1,5 +1,7 @@
 const express = require('express');
-const { getAllMemories, addNewMemory } = require('../controllers/memoryController')
+const { getAllMemories, 
+    addNewMemory, 
+    deleteMemory } = require('../controllers/memoryController')
 
  const router = express.Router()
 
@@ -15,6 +17,13 @@ router.get('/', getAllMemories)
  */
 // POST a new memory
 router.post('/', addNewMemory)
+
+
+/**
+ * Read and Write Permission Routes
+ */
+// DELETE a memory
+router.delete('/:id', deleteMemory);
 
 
 module.exports = router
